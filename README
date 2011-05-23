@@ -1,1 +1,6 @@
 The Django framework for Nexathan Project
+
+The framework includes user account management, group management, administration,
+authentication and authorization, and projects management. 
+
+For each project, we have ticket system, news, document/file management, Wiki, Forums, 
