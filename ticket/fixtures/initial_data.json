@@ -1,0 +1,44 @@
+[
+    {   
+        "pk": "1", 
+        "model": "ticket.TicketCategory", 
+        "fields": {
+            "name": "Bug Report"
+        }   
+    },  
+    {   
+        "pk": "2", 
+        "model": "ticket.TicketCategory", 
+        "fields": {
+            "name": "Feature Request"
+        }   
+    },  
+    {   
+        "pk": "3", 
+        "model": "ticket.TicketCategory", 
+        "fields": {
+            "name": "Improvement"
+        }   
+    },  
+    {   
+        "pk": "4", 
+        "model": "ticket.TicketCategory", 
+        "fields": {
+            "name": "Limitation"
+        }   
+    },  
+    {   
+        "pk": "5", 
+        "model": "ticket.TicketCategory", 
+        "fields": {
+            "name": "Task"
+        }   
+    },   
+    {   
+        "pk": "6", 
+        "model": "ticket.TicketCategory", 
+        "fields": {
+            "name": "Story"
+        }   
+    }       
+]

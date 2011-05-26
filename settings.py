@@ -132,6 +132,8 @@ INSTALLED_APPS = (
     'nexathan.admin',
     # Uncomment the next line to enable admin documentation:
     'nexathan.admindocs',
+    'nexathan.project',
+    'nexathan.ticket'
 )
 
 # A sample logging configuration. The only tangible logging

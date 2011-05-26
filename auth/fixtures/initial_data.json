@@ -26,47 +26,5 @@
         "fields": {
             "name": "Busy"
         }
-    },
-    {   
-        "pk": "1", 
-        "model": "auth.TicketCategory", 
-        "fields": {
-            "name": "Bug Report"
-        }   
-    },  
-    {   
-        "pk": "2", 
-        "model": "auth.TicketCategory", 
-        "fields": {
-            "name": "Feature Request"
-        }   
-    },  
-    {   
-        "pk": "3", 
-        "model": "auth.TicketCategory", 
-        "fields": {
-            "name": "Improvement"
-        }   
-    },  
-    {   
-        "pk": "4", 
-        "model": "auth.TicketCategory", 
-        "fields": {
-            "name": "Limitation"
-        }   
-    },  
-    {   
-        "pk": "5", 
-        "model": "auth.TicketCategory", 
-        "fields": {
-            "name": "Task"
-        }   
-    },   
-    {   
-        "pk": "6", 
-        "model": "auth.TicketCategory", 
-        "fields": {
-            "name": "Story"
-        }   
-    }       
+    }  
 ]
