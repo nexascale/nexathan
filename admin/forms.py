@@ -1,8 +1,8 @@
 from django import forms
 
-from django.contrib.auth import authenticate
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.models import User
+from nexathan.auth import authenticate
+from nexathan.auth.forms import AuthenticationForm
+from nexathan.auth.models import User
 
 from django.utils.translation import ugettext_lazy, ugettext as _
 

@@ -7,9 +7,9 @@ from django.utils.encoding import force_unicode, smart_str
 from django.utils.translation import ugettext, ugettext_lazy
 from django.utils.http import urlencode
 
-from django.contrib.admin import FieldListFilter
-from django.contrib.admin.options import IncorrectLookupParameters
-from django.contrib.admin.util import quote, get_fields_from_path
+from nexathan.admin import FieldListFilter
+from nexathan.admin.options import IncorrectLookupParameters
+from nexathan.admin.util import quote, get_fields_from_path
 
 # The system will display a "Show all" link on the change list only if the
 # total result count is less than or equal to this setting.

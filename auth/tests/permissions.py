@@ -3,8 +3,8 @@ try:
 except ImportError:
     from StringIO import StringIO
 
-from django.contrib.auth.management import create_permissions
-from django.contrib.auth import models as auth_models
+from nexathan.auth.management import create_permissions
+from nexathan.auth import models as auth_models
 from django.contrib.contenttypes import models as contenttypes_models
 from django.core.management import call_command
 from django.test import TestCase

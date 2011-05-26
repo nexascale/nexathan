@@ -1,6 +1,6 @@
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.contrib.auth.tokens import default_token_generator
+from nexathan.auth.models import User
+from nexathan.auth import authenticate
+from nexathan.auth.tokens import default_token_generator
 from django.contrib.sites.models import get_current_site
 from django.template import Context, loader
 from django import forms

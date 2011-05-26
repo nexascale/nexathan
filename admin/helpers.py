@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from django.contrib.admin.util import (flatten_fieldsets, lookup_field,
+from nexathan.admin.util import (flatten_fieldsets, lookup_field,
     display_for_field, label_for_field, help_text_for_field)
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ObjectDoesNotExist
@@ -164,8 +164,8 @@ class AdminReadonlyField(object):
         })
 
     def contents(self):
-        from django.contrib.admin.templatetags.admin_list import _boolean_icon
-        from django.contrib.admin.views.main import EMPTY_CHANGELIST_VALUE
+        from nexathan.admin.templatetags.admin_list import _boolean_icon
+        from nexathan.admin.views.main import EMPTY_CHANGELIST_VALUE
         field, obj, model_admin = self.field['field'], self.form.instance, self.model_admin
         try:
             f, attr, value = lookup_field(field, obj, model_admin)

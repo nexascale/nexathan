@@ -1,7 +1,7 @@
 import warnings
 
 from django.conf import settings
-from django.contrib.auth.models import User, Group, Permission, AnonymousUser
+from nexathan.auth.models import User, Group, Permission, AnonymousUser
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ImproperlyConfigured
 from django.test import TestCase
@@ -9,7 +9,7 @@ from django.test import TestCase
 
 class BackendTest(TestCase):
 
-    backend = 'django.contrib.auth.backends.ModelBackend'
+    backend = 'nexathan.auth.backends.ModelBackend'
 
     def setUp(self):
         self.curr_auth = settings.AUTHENTICATION_BACKENDS
@@ -163,7 +163,7 @@ class RowlevelBackendTest(TestCase):
     """
     Tests for auth backend that supports object level permissions
     """
-    backend = 'django.contrib.auth.tests.auth_backends.SimpleRowlevelBackend'
+    backend = 'nexathan.auth.tests.auth_backends.SimpleRowlevelBackend'
 
     def setUp(self):
         self.curr_auth = settings.AUTHENTICATION_BACKENDS
@@ -217,7 +217,7 @@ class AnonymousUserBackendTest(TestCase):
     Tests for AnonymousUser delegating to backend if it has 'supports_anonymous_user' = True
     """
 
-    backend = 'django.contrib.auth.tests.auth_backends.AnonymousUserBackend'
+    backend = 'nexathan.auth.tests.auth_backends.AnonymousUserBackend'
 
     def setUp(self):
         self.curr_auth = settings.AUTHENTICATION_BACKENDS
@@ -247,7 +247,7 @@ class NoAnonymousUserBackendTest(TestCase):
     """
     Tests that AnonymousUser does not delegate to backend if it has 'supports_anonymous_user' = False
     """
-    backend = 'django.contrib.auth.tests.auth_backends.NoAnonymousUserBackend'
+    backend = 'nexathan.auth.tests.auth_backends.NoAnonymousUserBackend'
 
     def setUp(self):
         self.curr_auth = settings.AUTHENTICATION_BACKENDS
@@ -305,7 +305,7 @@ class InActiveUserBackendTest(TestCase):
     Tests for a inactive user delegating to backend if it has 'supports_inactive_user' = True
     """
 
-    backend = 'django.contrib.auth.tests.auth_backends.InActiveUserBackend'
+    backend = 'nexathan.auth.tests.auth_backends.InActiveUserBackend'
 
     def setUp(self):
         self.curr_auth = settings.AUTHENTICATION_BACKENDS
@@ -330,7 +330,7 @@ class NoInActiveUserBackendTest(TestCase):
     """
     Tests that an inactive user does not delegate to backend if it has 'supports_inactive_user' = False
     """
-    backend = 'django.contrib.auth.tests.auth_backends.NoInActiveUserBackend'
+    backend = 'nexathan.auth.tests.auth_backends.NoInActiveUserBackend'
 
     def setUp(self):
         self.curr_auth = settings.AUTHENTICATION_BACKENDS

@@ -1,8 +1,8 @@
 from django.db import transaction
 from django.conf import settings
-from django.contrib import admin
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AdminPasswordChangeForm
-from django.contrib.auth.models import User, Group
+from nexathan import admin
+from nexathan.auth.forms import UserCreationForm, UserChangeForm, AdminPasswordChangeForm
+from nexathan.auth.models import User, Group
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect, Http404

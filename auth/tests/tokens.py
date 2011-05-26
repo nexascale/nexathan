@@ -1,8 +1,8 @@
 from datetime import date, timedelta
 
 from django.conf import settings
-from django.contrib.auth.models import User, AnonymousUser
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from nexathan.auth.models import User, AnonymousUser
+from nexathan.auth.tokens import PasswordResetTokenGenerator
 from django.test import TestCase
 
 

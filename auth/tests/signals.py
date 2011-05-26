@@ -1,9 +1,9 @@
 from django.test import TestCase
-from django.contrib.auth import signals
+from nexathan.auth import signals
 
 
 class SignalTestCase(TestCase):
-    urls = 'django.contrib.auth.tests.urls'
+    urls = 'nexathan.auth.tests.urls'
     fixtures = ['authtestdata.json']
 
     def listener_login(self, user, **kwargs):

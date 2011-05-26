@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from django.contrib.admindocs import views
+from nexathan.admindocs import views
 
 urlpatterns = patterns('',
     url('^$',

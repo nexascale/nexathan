@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.contrib.auth import models, management
+from nexathan.auth import models, management
 
 
 class GetDefaultUsernameTestCase(TestCase):

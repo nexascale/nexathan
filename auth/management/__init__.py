@@ -4,9 +4,9 @@ Creates permissions for all installed apps that need permissions.
 import getpass
 import locale
 import unicodedata
-from django.contrib.auth import models as auth_app
+from nexathan.auth import models as auth_app
 from django.db.models import get_models, signals
-from django.contrib.auth.models import User
+from nexathan.auth.models import User
 
 
 def _get_permission_codename(action, opts):
@@ -102,7 +102,7 @@ def get_default_username(check_db=True):
     :returns: The username, or an empty string if no username can be
         determined.
     """
-    from django.contrib.auth.management.commands.createsuperuser import \
+    from nexathan.auth.management.commands.createsuperuser import \
         RE_VALID_USERNAME
     default_username = get_system_username()
     try:
@@ -124,6 +124,6 @@ def get_default_username(check_db=True):
 
 
 signals.post_syncdb.connect(create_permissions,
-    dispatch_uid = "django.contrib.auth.management.create_permissions")
+    dispatch_uid = "nexathan.auth.management.create_permissions")
 signals.post_syncdb.connect(create_superuser,
-    sender=auth_app, dispatch_uid = "django.contrib.auth.management.create_superuser")
+    sender=auth_app, dispatch_uid = "nexathan.auth.management.create_superuser")

@@ -1,12 +1,12 @@
 # from django.conf import settings
-from django.contrib.auth import authenticate
+from nexathan.auth import authenticate
 from django.db.models import Q
 from django.test import TestCase
 # from django.template import Template
 
 class AuthContextProcessorTests(TestCase):
     """
-    Tests for the ``django.contrib.auth.context_processors.auth`` processor
+    Tests for the ``nexathan.auth.context_processors.auth`` processor
     """
     urls = 'regressiontests.context_processors.urls'
     fixtures = ['context-processors-users.xml']

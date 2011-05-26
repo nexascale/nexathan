@@ -1,10 +1,10 @@
 from django.db import connection
-from django.contrib.auth.models import User, Permission
+from nexathan.auth.models import User, Permission
 
 
 class ModelBackend(object):
     """
-    Authenticates against django.contrib.auth.models.User.
+    Authenticates against nexathan.auth.models.User.
     """
     supports_object_permissions = False
     supports_anonymous_user = True

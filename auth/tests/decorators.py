@@ -1,12 +1,12 @@
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.tests.views import AuthViewsTestCase
+from nexathan.auth.decorators import login_required
+from nexathan.auth.tests.views import AuthViewsTestCase
 
 class LoginRequiredTestCase(AuthViewsTestCase):
     """
     Tests the login_required decorators
     """
-    urls = 'django.contrib.auth.tests.urls'
+    urls = 'nexathan.auth.tests.urls'
 
     def testCallable(self):
         """

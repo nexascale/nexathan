@@ -2,8 +2,8 @@ import datetime
 import hashlib
 import urllib
 
-from django.contrib import auth
-from django.contrib.auth.signals import user_logged_in
+from nexathan import auth
+from nexathan.auth.signals import user_logged_in
 from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 from django.db.models.manager import EmptyManager

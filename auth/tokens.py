@@ -51,7 +51,7 @@ class PasswordResetTokenGenerator(object):
         # last_login will also change), we produce a hash that will be
         # invalid as soon as it is used.
         # We limit the hash to 20 chars to keep URL short
-        key_salt = "django.contrib.auth.tokens.PasswordResetTokenGenerator"
+        key_salt = "nexathan.auth.tokens.PasswordResetTokenGenerator"
         value = unicode(user.id) + \
             user.password + user.last_login.strftime('%Y-%m-%d %H:%M:%S') + \
             unicode(timestamp)

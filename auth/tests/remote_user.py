@@ -1,16 +1,16 @@
 from datetime import datetime
 
 from django.conf import settings
-from django.contrib.auth.backends import RemoteUserBackend
-from django.contrib.auth.models import User
+from nexathan.auth.backends import RemoteUserBackend
+from nexathan.auth.models import User
 from django.test import TestCase
 
 
 class RemoteUserTest(TestCase):
 
-    urls = 'django.contrib.auth.tests.urls'
-    middleware = 'django.contrib.auth.middleware.RemoteUserMiddleware'
-    backend = 'django.contrib.auth.backends.RemoteUserBackend'
+    urls = 'nexathan.auth.tests.urls'
+    middleware = 'nexathan.auth.middleware.RemoteUserMiddleware'
+    backend = 'nexathan.auth.backends.RemoteUserBackend'
 
     # Usernames to be passed in REMOTE_USER for the test_known_user test case.
     known_user = 'knownuser'
@@ -110,7 +110,7 @@ class RemoteUserNoCreateTest(RemoteUserTest):
     """
 
     backend =\
-        'django.contrib.auth.tests.remote_user.RemoteUserNoCreateBackend'
+        'nexathan.auth.tests.remote_user.RemoteUserNoCreateBackend'
 
     def test_unknown_user(self):
         num_users = User.objects.count()
@@ -146,7 +146,7 @@ class RemoteUserCustomTest(RemoteUserTest):
     """
 
     backend =\
-        'django.contrib.auth.tests.remote_user.CustomRemoteUserBackend'
+        'nexathan.auth.tests.remote_user.CustomRemoteUserBackend'
     # REMOTE_USER strings with email addresses for the custom backend to
     # clean.
     known_user = 'knownuser@example.com'

@@ -3,8 +3,8 @@ Built-in, globally-available admin actions.
 """
 
 from django.core.exceptions import PermissionDenied
-from django.contrib.admin import helpers
-from django.contrib.admin.util import get_deleted_objects, model_ngettext
+from nexathan.admin import helpers
+from nexathan.admin.util import get_deleted_objects, model_ngettext
 from django.db import router
 from django.template.response import TemplateResponse
 from django.utils.encoding import force_unicode

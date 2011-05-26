@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.contrib.auth.models import User, AnonymousUser
+from nexathan.auth.models import User, AnonymousUser
 from django.core.management import call_command
 from StringIO import StringIO
 

@@ -4,8 +4,8 @@ from django.forms.formsets import all_valid
 from django.forms.models import (modelform_factory, modelformset_factory,
     inlineformset_factory, BaseInlineFormSet)
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.admin import widgets, helpers
-from django.contrib.admin.util import unquote, flatten_fieldsets, get_deleted_objects, model_format_dict
+from nexathan.admin import widgets, helpers
+from nexathan.admin.util import unquote, flatten_fieldsets, get_deleted_objects, model_format_dict
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_protect
 from django.core.exceptions import PermissionDenied, ValidationError
@@ -444,7 +444,7 @@ class ModelAdmin(BaseModelAdmin):
         """
         Returns the ChangeList class for use on the changelist page.
         """
-        from django.contrib.admin.views.main import ChangeList
+        from nexathan.admin.views.main import ChangeList
         return ChangeList
 
     def get_object(self, request, object_id):
@@ -497,7 +497,7 @@ class ModelAdmin(BaseModelAdmin):
 
         The default implementation creates an admin LogEntry object.
         """
-        from django.contrib.admin.models import LogEntry, ADDITION
+        from nexathan.admin.models import LogEntry, ADDITION
         LogEntry.objects.log_action(
             user_id         = request.user.pk,
             content_type_id = ContentType.objects.get_for_model(object).pk,
@@ -512,7 +512,7 @@ class ModelAdmin(BaseModelAdmin):
 
         The default implementation creates an admin LogEntry object.
         """
-        from django.contrib.admin.models import LogEntry, CHANGE
+        from nexathan.admin.models import LogEntry, CHANGE
         LogEntry.objects.log_action(
             user_id         = request.user.pk,
             content_type_id = ContentType.objects.get_for_model(object).pk,
@@ -529,7 +529,7 @@ class ModelAdmin(BaseModelAdmin):
 
         The default implementation creates an admin LogEntry object.
         """
-        from django.contrib.admin.models import LogEntry, DELETION
+        from nexathan.admin.models import LogEntry, DELETION
         LogEntry.objects.log_action(
             user_id         = request.user.id,
             content_type_id = ContentType.objects.get_for_model(self.model).pk,
@@ -553,7 +553,7 @@ class ModelAdmin(BaseModelAdmin):
         """
         # If self.actions is explicitally set to None that means that we don't
         # want *any* actions enabled on this page.
-        from django.contrib.admin.views.main import IS_POPUP_VAR
+        from nexathan.admin.views.main import IS_POPUP_VAR
         if self.actions is None or IS_POPUP_VAR in request.GET:
             return SortedDict()
 
@@ -1043,7 +1043,7 @@ class ModelAdmin(BaseModelAdmin):
     @csrf_protect_m
     def changelist_view(self, request, extra_context=None):
         "The 'change list' admin view for this model."
-        from django.contrib.admin.views.main import ERROR_FLAG
+        from nexathan.admin.views.main import ERROR_FLAG
         opts = self.model._meta
         app_label = opts.app_label
         if not self.has_change_permission(request, None):
@@ -1254,7 +1254,7 @@ class ModelAdmin(BaseModelAdmin):
 
     def history_view(self, request, object_id, extra_context=None):
         "The 'history' admin view for this model."
-        from django.contrib.admin.models import LogEntry
+        from nexathan.admin.models import LogEntry
         model = self.model
         opts = model._meta
         app_label = opts.app_label

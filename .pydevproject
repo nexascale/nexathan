@@ -8,7 +8,5 @@
 <key>DJANGO_MANAGE_LOCATION</key>
 <value>src/manage.py</value>
 </pydev_variables_property>
-<pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
-<path>/nexathan/src</path>
-</pydev_pathproperty>
+
 </pydev_project>

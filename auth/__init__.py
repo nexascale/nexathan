@@ -2,7 +2,7 @@ import datetime
 from warnings import warn
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.importlib import import_module
-from django.contrib.auth.signals import user_logged_in, user_logged_out
+from nexathan.auth.signals import user_logged_in, user_logged_out
 
 SESSION_KEY = '_auth_user_id'
 BACKEND_SESSION_KEY = '_auth_user_backend'
@@ -89,11 +89,11 @@ def logout(request):
 
     request.session.flush()
     if hasattr(request, 'user'):
-        from django.contrib.auth.models import AnonymousUser
+        from nexathan.auth.models import AnonymousUser
         request.user = AnonymousUser()
 
 def get_user(request):
-    from django.contrib.auth.models import AnonymousUser
+    from nexathan.auth.models import AnonymousUser
     try:
         user_id = request.session[SESSION_KEY]
         backend_path = request.session[BACKEND_SESSION_KEY]

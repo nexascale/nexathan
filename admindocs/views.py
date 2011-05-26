@@ -1,13 +1,13 @@
 from django import template, templatetags
 from django.template import RequestContext
 from django.conf import settings
-from django.contrib.admin.views.decorators import staff_member_required
+from nexathan.admin.views.decorators import staff_member_required
 from django.db import models
 from django.shortcuts import render_to_response
 from django.core.exceptions import ImproperlyConfigured, ViewDoesNotExist
 from django.http import Http404
 from django.core import urlresolvers
-from django.contrib.admindocs import utils
+from nexathan.admindocs import utils
 from django.contrib.sites.models import Site
 from django.utils.importlib import import_module
 from django.utils.translation import ugettext as _

@@ -3,10 +3,10 @@ import re
 import urllib
 
 from django.conf import settings
-from django.contrib.auth import SESSION_KEY, REDIRECT_FIELD_NAME
-from django.contrib.auth.forms import AuthenticationForm
+from nexathan.auth import SESSION_KEY, REDIRECT_FIELD_NAME
+from nexathan.auth.forms import AuthenticationForm
 from django.contrib.sites.models import Site, RequestSite
-from django.contrib.auth.models import User
+from nexathan.auth.models import User
 from django.test import TestCase
 from django.core import mail
 from django.core.urlresolvers import reverse
@@ -17,7 +17,7 @@ class AuthViewsTestCase(TestCase):
     Helper base class for all the follow test cases.
     """
     fixtures = ['authtestdata.json']
-    urls = 'django.contrib.auth.tests.urls'
+    urls = 'nexathan.auth.tests.urls'
 
     def setUp(self):
         self.old_LANGUAGES = settings.LANGUAGES
@@ -196,7 +196,7 @@ class ChangePasswordTest(AuthViewsTestCase):
 class LoginTest(AuthViewsTestCase):
 
     def test_current_site_in_context_after_login(self):
-        response = self.client.get(reverse('django.contrib.auth.views.login'))
+        response = self.client.get(reverse('nexathan.auth.views.login'))
         self.assertEqual(response.status_code, 200)
         if Site._meta.installed:
             site = Site.objects.get_current()
@@ -208,7 +208,7 @@ class LoginTest(AuthViewsTestCase):
                      'Login form is not an AuthenticationForm')
 
     def test_security_check(self, password='password'):
-        login_url = reverse('django.contrib.auth.views.login')
+        login_url = reverse('nexathan.auth.views.login')
 
         # Those URLs should not pass the security check
         for bad_url in ('http://example.com',
@@ -255,7 +255,7 @@ class LoginTest(AuthViewsTestCase):
 
 
 class LoginURLSettings(AuthViewsTestCase):
-    urls = 'django.contrib.auth.tests.urls'
+    urls = 'nexathan.auth.tests.urls'
 
     def setUp(self):
         super(LoginURLSettings, self).setUp()
@@ -314,7 +314,7 @@ class LoginURLSettings(AuthViewsTestCase):
 
 
 class LogoutTest(AuthViewsTestCase):
-    urls = 'django.contrib.auth.tests.urls'
+    urls = 'nexathan.auth.tests.urls'
 
     def confirm_logged_out(self):
         self.assertTrue(SESSION_KEY not in self.client.session)
@@ -371,7 +371,7 @@ class LogoutTest(AuthViewsTestCase):
         self.confirm_logged_out()
 
     def test_security_check(self, password='password'):
-        logout_url = reverse('django.contrib.auth.views.logout')
+        logout_url = reverse('nexathan.auth.views.logout')
 
         # Those URLs should not pass the security check
         for bad_url in ('http://example.com',

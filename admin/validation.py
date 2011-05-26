@@ -3,9 +3,9 @@ from django.db import models
 from django.db.models.fields import FieldDoesNotExist
 from django.forms.models import (BaseModelForm, BaseModelFormSet, fields_for_model,
     _get_foreign_key)
-from django.contrib.admin import ListFilter, FieldListFilter
-from django.contrib.admin.util import get_fields_from_path, NotRelationField
-from django.contrib.admin.options import (flatten_fieldsets, BaseModelAdmin,
+from nexathan.admin import ListFilter, FieldListFilter
+from nexathan.admin.util import get_fields_from_path, NotRelationField
+from nexathan.admin.options import (flatten_fieldsets, BaseModelAdmin,
     HORIZONTAL, VERTICAL)
 
 

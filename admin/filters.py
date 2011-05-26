@@ -12,7 +12,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils.encoding import smart_unicode
 from django.utils.translation import ugettext_lazy as _
 
-from django.contrib.admin.util import (get_model_from_relation,
+from nexathan.admin.util import (get_model_from_relation,
     reverse_field_path, get_limit_choices_to_from_path)
 
 class ListFilter(object):
@@ -176,7 +176,7 @@ class RelatedFieldListFilter(FieldListFilter):
         return [self.lookup_kwarg, self.lookup_kwarg_isnull]
 
     def choices(self, cl):
-        from django.contrib.admin.views.main import EMPTY_CHANGELIST_VALUE
+        from nexathan.admin.views.main import EMPTY_CHANGELIST_VALUE
         yield {
             'selected': self.lookup_val is None and not self.lookup_val_isnull,
             'query_string': cl.get_query_string({},
@@ -368,7 +368,7 @@ class AllValuesFieldListFilter(FieldListFilter):
         return [self.lookup_kwarg, self.lookup_kwarg_isnull]
 
     def choices(self, cl):
-        from django.contrib.admin.views.main import EMPTY_CHANGELIST_VALUE
+        from nexathan.admin.views.main import EMPTY_CHANGELIST_VALUE
         yield {
             'selected': (self.lookup_val is None
                 and self.lookup_val_isnull is None),
